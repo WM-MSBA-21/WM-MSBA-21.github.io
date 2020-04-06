@@ -7,11 +7,11 @@ We are a team of four graduate students in the MSBA (Business Analytics) program
 ### Machine Learning II: Lab Presentation
 
 Lab 10.5: Clustering, K-Means Clustering, Hierarchical Clustering
-- [Walkthrough](ProjectFiles/Lab10-5_Clustering.html)
+- [View Walkthrough](ProjectFiles/Lab10-5_Clustering.html)
 - [Dowload Code](ProjectFiles/Lab10-5_Clustering.Rmd)
 
 Applied Exercise 10.9
-- [Walkthrough](ProjectFiles/AppliedExercise10-9.html)
+- [View Walkthrough](ProjectFiles/AppliedExercise10-9.html)
 - [Download Code](ProjectFiles/AppliedExercise10-9.Rmd)
 
 
