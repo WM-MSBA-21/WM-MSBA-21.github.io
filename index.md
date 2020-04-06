@@ -2,7 +2,7 @@
 
 Welcome to our project homepage! 
 
-We are a team of four graduate students in the MS in Business Analytics (MSBA) program at William & Mary's Mason School of Business. On this page you can find our relevant project materials for the Spring 2020 semester.
+We are a team of four graduate students in the MS in Business Analytics (MSBA) program at William & Mary - Raymond A. Mason School of Business. On this page you can find our relevant project materials for the Spring 2020 semester.
 
 ### Machine Learning II: Lab Presentation
 
