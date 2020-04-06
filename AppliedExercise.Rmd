@@ -1,0 +1,39 @@
+---
+title: "Applied Exercise 10.9"
+author: "Team 21: Derartu Dinku | Kelly Field | Sy Lax | Kishan Patel"
+output: html_document
+---
+
+Consider the USArrests data. We will now perform hierarchical clustering on the states.
+
+a. Using hierarchical clustering with complete linkage and Euclidean distance, cluster the states.
+
+```{r}
+set.seed(2)
+hc.complete <- hclust(dist(USArrests), method = "complete")
+plot(hc.complete)
+```
+
+b. Cut the dendrogram at a height that results in three distinct clusters. Which states belong to which clusters?
+```{r}
+cutree(hc.complete, 3)
+```
+
+c. Hierarchically cluster the states using complete linkage and Eu- clidean distance, after scaling the variables to have standard deviation one.
+```{r}
+sd.data <- scale(USArrests)
+hc.complete.sd <- hclust(dist(sd.data), method = "complete")
+plot(hc.complete.sd)
+```
+
+d. What effect does scaling the variables have on the hierarchical clustering obtained? In your opinion, should the variables be scaled before the inter-observation dissimilarities are computed? Provide a justification for your answer.
+
+```{r}
+cutree(hc.complete.sd, 3)
+```
+
+```{r}
+table(cutree(hc.complete, 3), cutree(hc.complete.sd, 3), dnn = c('Not-Scaled', 'Scaled'))
+```
+
+Scaling the variables affect the clusters obtained although by scaling the data the size of the third cluster increases subastantially making up alomost 1/3 of the data present. Varaibles used in clustering algorithms should always be scaled beforehand. The diffence in scale of the features used  could artificially pull a data point towards a particular cluster.

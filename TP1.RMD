@@ -1,0 +1,103 @@
+---
+title: "Lab 10.5: Clustering, K-Means Clustering, Hierarchical Clustering"
+author: "Team 21: Derartu Dinku | Kelly Field | Sy Lax | Kishan Patel"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+rm(list=ls())
+
+```
+
+
+
+## K-Means Clustering
+
+We begin by first creating a simulated dataset with two distinct seperate groups.
+
+```{r}
+set.seed(2)
+# Create a 50 x 2 matrix using a random normal distribution
+x=matrix(rnorm(50*2), ncol=2) 
+# take the first 25 vlaues of the first column and add three 
+x[1:25,1]=x[1:25,1]+3
+# take the first 25 vlaues of the first column and subtract four
+x[1:25,2]=x[1:25,2]-4
+
+```
+
+Run k-means where k = 2.
+
+```{r }
+km.out=kmeans(x,2,nstart=20)
+km.out$cluster
+
+```
+
+```{r }
+plot(x, col=(km.out$cluster+1), main="K-Means Clustering Results with K=2", xlab="", ylab="", pch=20, cex=2)
+
+```
+
+We know that there are two distinct groups because we created the data, however in the real world we will almost never know the real number of clusters. Below is the same K-Means model with three clusters instead of two.
+
+```{r}
+set.seed(4)
+km.out=kmeans(x,3,nstart=20)
+km.out
+```
+
+``` {r}
+plot(x, col=(km.out$cluster+1), main="K-Means Clustering Results with K=3", xlab="", ylab="", pch=20, cex=2)
+```
+
+
+Nstart controls the number of random cluster assignments. When we assign a value greater than 1 to nstart R will utilize multiple random assignments and will return the version with the best performance. Below you can see that the kmeans with an nstart of 20 has a slighlty better within-clustter sum of squares.
+
+```{r}
+set.seed(21)
+km.out=kmeans(x,3,nstart=1)
+km.out$tot.withinss
+km.out=kmeans(x,3,nstart=20)
+km.out$tot.withinss
+```
+
+
+
+
+
+
+## Hierarchical Clustering
+
+```{r}
+hc.complete=hclust(dist(x), method="complete") # computes all pairwise dissimilarities and records the largest 
+hc.average=hclust(dist(x), method="average") # computes all pairwise dissimilarities and records the average 
+hc.single=hclust(dist(x), method="single")# computes all pairwise dissimilarities and records the smallest
+par(mfrow=c(1,3))
+plot(hc.complete,main="Complete Linkage", xlab="", sub="", cex=.9)
+plot(hc.average, main="Average Linkage", xlab="", sub="", cex=.9)
+plot(hc.single, main="Single Linkage", xlab="", sub="", cex=.9)
+
+```
+
+The code below cuts a dendrogram tree into its groups based on the desired number of clusters.
+```{r}
+cutree(hc.complete, 2)
+cutree(hc.average, 2)
+cutree(hc.single, 2)
+cutree(hc.single, 4)
+```
+```{r}
+xsc=scale(x)
+plot(hclust(dist(xsc), method="complete"), main="Hierarchical Clustering with Scaled Features")
+
+
+```
+
+```{r}
+x=matrix(rnorm(30*3), ncol=3)
+dd=as.dist(1-cor(t(x)))
+plot(hclust(dd, method="complete"), main="Complete Linkage with Correlation-Based Distance", xlab="", sub="")
+
+```
