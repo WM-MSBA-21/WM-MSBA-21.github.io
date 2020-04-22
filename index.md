@@ -14,4 +14,12 @@ Applied Exercise 10.9
 - [View Walkthrough](ProjectFiles/AppliedExercise10-9.html)
 - [Download Code](ProjectFiles/AppliedExercise10-9.Rmd)
 
+### Machine Learning II: Final Project
+
+Santander Customer Transaction Prediction
+- [Link to Presentation]
+- [Slide Deck]
+- [Download Code]
+- [Original Kaggle Competition](https://www.kaggle.com/c/santander-customer-transaction-prediction/overview)
+
 
