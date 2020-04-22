@@ -17,7 +17,7 @@ Applied Exercise 10.9
 ### Machine Learning II: Final Project
 
 Santander Customer Transaction Prediction
-- [Link to Presentation]
+- [Link to Presentation](https://youtu.be/vJwBN_WLNyM)
 - [Download Code](ProjectFiles/SantanderModelCode.zip)
 - [Slide Deck](ProjectFiles/TP2.pdf)
 - [Original Kaggle Competition](https://www.kaggle.com/c/santander-customer-transaction-prediction/overview)
