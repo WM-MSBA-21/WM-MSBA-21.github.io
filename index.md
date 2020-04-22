@@ -18,8 +18,9 @@ Applied Exercise 10.9
 
 Santander Customer Transaction Prediction
 - [Link to Presentation]
-- [Slide Deck]
 - [Download Code]
+- [Slide Deck]
+- [Executive Summary]
 - [Original Kaggle Competition](https://www.kaggle.com/c/santander-customer-transaction-prediction/overview)
 
 
